@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load user_filters %}
+{% load thumbnail %}
+
+<main role="main" class="container">
+    <div class="row">
+        {% include 'posts/author-item.html' %}
+        <div class="col-md-9">
+            <!-- Пост -->
+                {% include 'posts/post_item.html' with post=post %}
+                {% include 'posts/comments.html' %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}
